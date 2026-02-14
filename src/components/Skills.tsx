@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaPython, FaGitAlt, FaDocker, FaAws } from 'react-icons/fa';
-import { SiTypescript, SiTailwindcss, SiMongodb, SiExpress, SiNextdotjs, SiFirebase, SiPostgresql, SiRedux, SiGraphql, SiVercel } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, } from 'react-icons/fa';
+import { SiTypescript, SiTailwindcss, SiMongodb, SiExpress, SiNextdotjs, SiFirebase, SiRedux, SiVercel } from 'react-icons/si';
 
 const skillCategories = [
   {
@@ -20,18 +20,13 @@ const skillCategories = [
     skills: [
       { name: 'Node.js', icon: <FaNodeJs />, color: '#339933' },
       { name: 'Express', icon: <SiExpress />, color: '#ffffff' },
-      // { name: 'Python', icon: <FaPython />, level: 75, color: '#3776AB' },
-      // { name: 'GraphQL', icon: <SiGraphql />, level: 80, color: '#E10098' },
       { name: 'MongoDB', icon: <SiMongodb />, color: '#47A248' },
-      // { name: 'PostgreSQL', icon: <SiPostgresql />, level: 80, color: '#4169E1' },
     ]
   },
   {
     title: 'Tools & Others',
     skills: [
       { name: 'Git', icon: <FaGitAlt />, color: '#F05032' },
-      // { name: 'Docker', icon: <FaDocker />, level: 75, color: '#2496ED' },
-      // { name: 'AWS', icon: <FaAws />, level: 70, color: '#FF9900' },
       { name: 'Firebase', icon: <SiFirebase />, color: '#FFCA28' },
       { name: 'Vercel', icon: <SiVercel />, color: '#ffffff' },
       { name: 'HTML5', icon: <FaHtml5 />, color: '#E34F26' },
