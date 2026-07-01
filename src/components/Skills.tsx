@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, } from 'react-icons/fa';
-import { SiTypescript, SiTailwindcss, SiMongodb, SiExpress, SiNextdotjs, SiFirebase, SiRedux, SiVercel } from 'react-icons/si';
+import { SiTypescript, SiTailwindcss, SiMongodb, SiExpress, SiNextdotjs, SiFirebase, SiRedux, SiVercel, SiPostgresql, SiPrisma } from 'react-icons/si';
 
 const skillCategories = [
   {
@@ -18,6 +18,8 @@ const skillCategories = [
   {
     title: 'Backend',
     skills: [
+      { name: "PostgreSQL", icon: <SiPostgresql />, color: "#336791" },
+      { name: "Prisma", icon: <SiPrisma />, color: "#2D3748" },
       { name: 'Node.js', icon: <FaNodeJs />, color: '#339933' },
       { name: 'Express', icon: <SiExpress />, color: '#ffffff' },
       { name: 'MongoDB', icon: <SiMongodb />, color: '#47A248' },
@@ -115,16 +117,16 @@ export function Skills() {
                   >
                     <div className="p-6 glass rounded-2xl border border-gray-800 hover:border-indigo-500/30 transition-all duration-300 text-center">
                       {/* Icon */}
-                      <div 
+                      <div
                         className="text-4xl  mb-3 transition-all duration-300 group-hover:scale-110"
                         style={{ color: skill.color }}
                       >
                         {skill.icon}
                       </div>
-                      
+
                       {/* Name */}
                       <h4 className="text-white text-left font-medium mb-3">{skill.name}</h4>
-                      
+
                       {/* Progress Bar */}
                       {/* <div className="relative h-1.5 bg-gray-700 rounded-full overflow-hidden">
                         <motion.div
@@ -137,13 +139,13 @@ export function Skills() {
                           }}
                         />
                       </div> */}
-                      
+
                       {/* Level */}
                       {/* <span className="text-xs text-gray-400 mt-2 block">{skill.level}</span> */}
                     </div>
 
                     {/* Glow Effect */}
-                    <div 
+                    <div
                       className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-xl"
                       style={{ background: skill.color }}
                     />

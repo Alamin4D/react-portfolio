@@ -313,7 +313,7 @@ export function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 bg-indigo-600 text-white rounded-xl font-semibold flex justify-center gap-2"
+                    className="w-full py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl font-semibold flex justify-center gap-2"
                   >
                     {isSubmitting ? (
                       "Sending..."
