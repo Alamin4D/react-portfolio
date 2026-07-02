@@ -90,6 +90,15 @@ export default function ProjectDetails() {
             <h2 className="text-lg font-bold text-indigo-400">Challenges Faced</h2>
             <p className="mt-3 leading-relaxed text-slate-300">{project.challenges}</p>
           </div>
+          <div>
+            <h2 className="text-lg font-bold text-indigo-400">Key Features</h2>
+
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-300">
+              {project.keyFeatures.map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
+            </ul>
+          </div>
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 lg:col-span-2">
             <h2 className="text-lg font-bold text-indigo-400">Future Improvements</h2>
             <p className="mt-3 leading-relaxed text-slate-300">{project.improvements}</p>
