@@ -6,7 +6,7 @@ import alamin from '../assets/alamin.png';
 
 const socialLinks = [
   { icon: <FaGithub size={20} />, href: 'https://github.com/Alamin4D', label: 'GitHub', color: 'hover:text-white' },
-  { icon: <FaLinkedin size={20} />, href: 'https://linkedin.com', label: 'LinkedIn', color: 'hover:text-blue-400' },
+  { icon: <FaLinkedin size={20} />, href: 'https://www.linkedin.com/in/mdalaminhossain2/', label: 'LinkedIn', color: 'hover:text-blue-400' },
   { icon: <FaTwitter size={20} />, href: 'https://twitter.com', label: 'Twitter', color: 'hover:text-cyan-400' },
 ];
 
