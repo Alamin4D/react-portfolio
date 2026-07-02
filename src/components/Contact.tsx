@@ -48,7 +48,7 @@ const socialLinks = [
   },
   {
     icon: <FaLinkedin size={20} />,
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/mdalaminhossain2/",
     label: "LinkedIn",
   },
   {
