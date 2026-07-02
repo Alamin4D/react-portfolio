@@ -83,9 +83,8 @@ export function Experience() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`relative flex items-start ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
+                className={`relative flex items-start ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                  }`}
               >
                 {/* Timeline Dot */}
                 <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4">
@@ -100,11 +99,10 @@ export function Experience() {
                   >
                     {/* Header */}
                     <div className="flex items-start gap-4 mb-4">
-                      <div className={`p-3 rounded-xl ${
-                        item.type === 'work' 
-                          ? 'bg-indigo-500/20 text-indigo-400' 
+                      <div className={`p-3 rounded-xl ${item.type === 'work'
+                          ? 'bg-indigo-500/20 text-indigo-400'
                           : 'bg-purple-500/20 text-purple-400'
-                      }`}>
+                        }`}>
                         {item.type === 'work' ? <FaBriefcase size={20} /> : <FaGraduationCap size={20} />}
                       </div>
                       <div className="flex-1">
@@ -159,6 +157,7 @@ export function Experience() {
         >
           <a
             href="/resume.pdf"
+            download
             className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-2xl font-semibold hover:shadow-lg hover:shadow-indigo-500/25 transition-all duration-300"
           >
             <span>Download Full Resume</span>
