@@ -158,7 +158,7 @@ export function Experience() {
           className="mt-16 text-center"
         >
           <a
-            href="#contact"
+            href="/resume.pdf"
             className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-2xl font-semibold hover:shadow-lg hover:shadow-indigo-500/25 transition-all duration-300"
           >
             <span>Download Full Resume</span>
