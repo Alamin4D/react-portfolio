@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaTwitter, FaHeart, FaArrowUp } from 'react-icons
 
 const socialLinks = [
   { icon: <FaGithub size={18} />, href: 'https://github.com/Alamin4D', label: 'GitHub' },
-  { icon: <FaLinkedin size={18} />, href: 'https://linkedin.com', label: 'LinkedIn' },
+  { icon: <FaLinkedin size={18} />, href: 'https://www.linkedin.com/in/mdalaminhossain2/', label: 'LinkedIn' },
   { icon: <FaTwitter size={18} />, href: 'https://twitter.com', label: 'Twitter' },
 ];
 
