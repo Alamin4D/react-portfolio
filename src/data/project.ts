@@ -55,6 +55,60 @@ export const projects: Project[] = [
       "Future enhancements include AI-powered personalized food recommendations, real-time delivery notifications using WebSockets, location-based delivery tracking, restaurant analytics dashboard, and improved SEO through server-side rendering."
   },
   {
+    id: "FixItNow",
+    name: "FixItNow — Home Service Platform",
+
+    tagline:
+      "A modern home service marketplace that connects customers with trusted technicians for convenient and reliable home services.",
+
+    image: "/images/fixit.png",
+
+    description:
+      "FixItNow is a modern frontend-focused home service marketplace built with Next.js. The platform allows customers to browse services, explore technician profiles, select available time slots, submit booking requests, complete secure online payments, track booking status, and leave reviews. Technicians can manage their profiles, services, availability, and incoming bookings, while administrators can manage users, service categories, bookings, and overall platform activity through dedicated dashboards.",
+
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "React",
+      "TanStack Query",
+      "Axios",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "Prisma",
+      "Stripe",
+      "JWT",
+    ],
+
+    liveLink: "https://fixitnow-frontend-assinment.vercel.app/",
+    githubLink: "https://github.com/Alamin4D/fixitnow-frontend-assinment",
+
+    keyFeatures: [
+      "Role-based authentication and protected routes for Customer, Technician, and Admin users.",
+      "Responsive service browsing interface with search, filtering, ratings, and pricing information.",
+      "Technician profile pages with bio, skills, experience, ratings, reviews, pricing, and booking options.",
+      "Interactive booking flow for selecting services, technicians, dates, and available time slots.",
+      "Technician availability scheduler for managing working hours and unavailable time slots.",
+      "Customer dashboard with booking history, payment history, booking details, and review submission.",
+      "Technician dashboard with upcoming jobs, pending booking requests, earnings, profile management, and availability controls.",
+      "Booking management system with Accept, Decline, Start Job, and Complete Job actions.",
+      "Stripe payment integration with dedicated payment success and cancellation pages.",
+      "Dynamic booking status badges for REQUESTED, ACCEPTED, DECLINED, PAID, IN_PROGRESS, COMPLETED, and CANCELLED states.",
+      "Admin dashboard with platform statistics, user management, ban/unban actions, and category management.",
+      "Loading skeletons, error handling, toast notifications, responsive layouts, and accessible UI components.",
+      "Light and dark mode support with a consistent modern design across the platform."
+    ],
+
+    challenges:
+      "One of the main challenges was implementing role-based authentication and route protection in Next.js using Middleware while ensuring that each authenticated user was redirected to the correct dashboard based on their role. Another challenge was building the complete booking lifecycle, including technician availability, time-slot selection, booking status transitions, payment initiation, and customer cancellation rules. Integrating Stripe into the booking flow while keeping the frontend state synchronized with the backend was also challenging. Managing technician availability and creating separate customer, technician, and admin dashboard experiences required careful component organization and API state management.",
+
+    improvements:
+      "Future enhancements include real-time booking notifications using WebSockets, live technician location tracking with map integration, AI-powered technician recommendations, customer-technician messaging, automated booking reminders, advanced technician analytics, richer admin reporting, online chat support, improved accessibility, and further performance and SEO optimization."
+  },
+
+  {
     id: "Cloud Kitchen Billing App",
     name: "Cloud Kitchen Billing App",
     tagline:
@@ -132,5 +186,5 @@ export const projects: Project[] = [
 
     improvements:
       "Future enhancements include online examination and grading, video conferencing integration, attendance tracking with QR codes, AI-powered learning recommendations, and a dedicated mobile application."
-  }
+  },
 ];

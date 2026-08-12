@@ -1,35 +1,38 @@
-// import { useState } from 'react';
-// import { motion, AnimatePresence } from 'framer-motion';
-// import { useInView } from 'react-intersection-observer';
-// import { FaGithub, FaExternalLinkAlt, FaStar, FaCodeBranch } from 'react-icons/fa';
-
 import { useNavigate } from "react-router-dom";
 import { FiArrowUpRight } from "react-icons/fi";
 import { projects } from "../data/project";
+import { useState } from "react";
 
 export default function Projects() {
   const navigate = useNavigate();
+  const [showAll, setShowAll] = useState(false);
+
+  const displayedProjects = showAll ? projects : projects.slice(0, 3);
 
   return (
-    <section id="projects" className="">
+    <section id="projects">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mb-14 text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-indigo-400">
             My Work
           </p>
-          <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Featured Projects</h2>
+
+          <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
+            {showAll ? "All Projects" : "Featured Projects"}
+          </h2>
+
           <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600" />
+
           <p className="mx-auto mt-5 max-w-2xl text-slate-400">
-            A few projects that highlight my skills across the full stack —
-            from UI/UX to backend architecture.
+            A few projects that highlight my skills across the full stack.
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
+          {displayedProjects.map((project) => (
             <div
               key={project.id}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-all hover:-translate-y-1 hover:border-indigo-400/40 hover:shadow-xl hover:shadow-teal-500/5"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-all hover:-translate-y-1 hover:border-indigo-400/40 hover:shadow-xl"
             >
               <div className="relative h-52 overflow-hidden">
                 <img
@@ -39,11 +42,16 @@ export default function Projects() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
               </div>
+
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-lg font-bold text-white">{project.name}</h3>
+                <h3 className="text-lg font-bold text-white">
+                  {project.name}
+                </h3>
+
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-400">
                   {project.tagline}
                 </p>
+
                 <div className="mt-4 flex flex-wrap gap-2">
                   {project.techStack.slice(0, 3).map((tech) => (
                     <span
@@ -54,19 +62,33 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
+
                 <button
                   onClick={() => {
                     navigate(`/project/${project.id}`);
                     window.scrollTo({ top: 0, behavior: "smooth" });
                   }}
-                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/15 py-2.5 text-sm font-semibold text-white transition-colors bg-gradient-to-r from-indigo-600 to-purple-600 text-white"
+                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 py-2.5 text-sm font-semibold text-white"
                 >
-                  View Details <FiArrowUpRight />
+                  View Details
+                  <FiArrowUpRight />
                 </button>
               </div>
             </div>
           ))}
         </div>
+
+
+        {!showAll && (
+          <div className="mt-12 flex justify-center">
+            <button
+              onClick={() => setShowAll(true)}
+              className="rounded-full border border-indigo-500 px-6 py-3 font-semibold text-white transition hover:bg-gradient-to-r from-indigo-600 to-purple-600"
+            >
+              View All Projects
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
