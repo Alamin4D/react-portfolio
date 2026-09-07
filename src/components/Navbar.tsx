@@ -132,6 +132,7 @@ export function Navbar() {
             </AnimatePresence>
           </motion.button>
         </div>
+        
 
         {/* Mobile Menu */}
         <AnimatePresence>
