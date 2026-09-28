@@ -6,9 +6,7 @@ import {
   Code2, 
   Layers, 
   Database, 
-  Terminal, 
-  Cpu, 
-  Globe 
+  Terminal 
 } from "lucide-react";
 
 // Skill Data Structure
@@ -85,7 +83,7 @@ export default function Skills() {
           {skillCategories.map((category, idx) => (
             <motion.div
               key={idx}
-              // variants={cardVariants}
+              // variants={cardVariants} // React e runtime stagger card movement clean trigger hobar jonno variant active kora holo
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
               className="group relative rounded-2xl border border-slate-900 bg-slate-900/40 p-6 backdrop-blur-sm transition-all duration-300 hover:border-slate-800 hover:bg-slate-900/70 shadow-lg"
             >
