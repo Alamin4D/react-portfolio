@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import type { Variants } from "framer-motion"; // Pure type-only import for verbatimModuleSyntax configuration
+import type { Variants } from "framer-motion"; 
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { ArrowUpRight, Mail } from "lucide-react";
 
@@ -20,13 +20,12 @@ export default function Hero() {
     deleteSpeed: 50,
   });
 
-  // Explicit type matching for animations parameters configuration override
   const leftSideVariants: Variants = {
     hidden: { opacity: 0, x: -50 },
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1.0] } // cubic-bezier solves transition ease type warning
+      transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1.0] }
     }
   };
 
@@ -41,12 +40,11 @@ export default function Hero() {
 
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-slate-950 px-6 py-24 text-slate-50 md:px-12">
-      {/* Background Radial Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,rgba(56,189,248,0.15),rgba(255,255,255,0))]" />
 
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-12 md:flex-row w-full z-10">
         
-        {/* Left Side: Content */}
+        {/* Left Side Content */}
         <motion.div
           variants={leftSideVariants}
           initial="hidden"
@@ -61,7 +59,6 @@ export default function Hero() {
             Hi, I'm <span className="bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent">Alamin</span>
           </h1>
 
-          {/* Typewriter Effect Container */}
           <h2 className="text-2xl font-medium text-slate-400 sm:text-3xl min-h-[40px]">
             I am a <span>{text}</span>
             <Cursor cursorColor="#38bdf8" />
@@ -72,11 +69,10 @@ export default function Hero() {
             Let's turn your ideas into functional digital realities.
           </p>
 
-          {/* Normal HTML/Tailwind Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4 md:justify-start">
             <a 
               href="#projects" 
-              className="inline-flex items-center justify-center px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-sm font-medium rounded-full hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-300 flex items-center gap-2 btn-shine"
+              className="inline-flex items-center justify-center px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-sm font-medium rounded-full hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-300 flex items-center gap-2"
             >
               View My Work <ArrowUpRight className="ml-2 h-4 w-4" />
             </a>
@@ -90,14 +86,13 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Right Side: Animated Image Section */}
+        {/* Right Side Image Box */}
         <motion.div
           variants={rightSideVariants}
           initial="hidden"
           animate="visible"
           className="relative flex items-center justify-center"
         >
-          {/* Animated Glow Background */}
           <motion.div 
             animate={{
               scale: [1, 1.05, 1],
@@ -111,7 +106,6 @@ export default function Hero() {
             className="absolute h-72 w-72 rounded-full bg-sky-500/20 blur-3xl sm:h-96 sm:w-96" 
           />
 
-          {/* Fluid Morphing Shape */}
           <motion.div
             animate={{
               borderRadius: [

@@ -1,9 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import type { Variants } from "framer-motion"; // Pure type-only import for verbatimModuleSyntax compatibility
+import type { Variants } from "framer-motion"; 
 import { User, Briefcase, GraduationCap, Award } from "lucide-react";
 
-// interface for Stat Structure definition
 interface StatItem {
   label: string;
   value: string;
@@ -11,20 +10,18 @@ interface StatItem {
 }
 
 export default function About() {
-  // Statistical Cards Typed Data
   const stats: StatItem[] = [
     { label: "Years Experience", value: "3+", icon: <Briefcase className="h-5 w-5 text-sky-400" /> },
     { label: "Projects Completed", value: "40+", icon: <Award className="h-5 w-5 text-indigo-400" /> },
     { label: "Happy Clients", value: "15+", icon: <User className="h-5 w-5 text-emerald-400" /> },
   ];
 
-  // Framer Motion Animation Variants with explicit Types to resolve compilation error
   const leftColumnVariants: Variants = {
     hidden: { opacity: 0, x: -40 },
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1.0] }, // Cubic-bezier avoids string errors
+      transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1.0] },
     },
   };
 
@@ -39,13 +36,12 @@ export default function About() {
 
   return (
     <section id="about" className="relative bg-slate-950 px-6 py-24 text-slate-50 md:px-12">
-      {/* Background Subtle Gradient Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(129,140,248,0.05),rgba(255,255,255,0))]" />
 
       <div className="mx-auto max-w-6xl relative z-10">
         <div className="grid gap-12 md:grid-cols-12 items-center">
           
-          {/* Left Column: Visual Box & Stats Card Grid */}
+          {/* Left Column */}
           <motion.div 
             variants={leftColumnVariants}
             initial="hidden"
@@ -53,7 +49,6 @@ export default function About() {
             viewport={{ once: true }}
             className="md:col-span-5 flex flex-col gap-6"
           >
-            {/* Visual Decorative Box */}
             <div className="relative group overflow-hidden rounded-2xl border border-slate-900 bg-gradient-to-br from-slate-900 to-slate-950 p-8 shadow-2xl">
               <div className="absolute top-0 right-0 h-32 w-32 rounded-full bg-indigo-500/10 blur-2xl group-hover:bg-indigo-500/20 transition-all duration-500" />
               <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-slate-950 border border-slate-800 text-sky-400 mb-6 shadow-inner">
@@ -65,7 +60,6 @@ export default function About() {
               </p>
             </div>
 
-            {/* Micro Stats Row/Grid */}
             <div className="grid grid-cols-3 gap-4">
               {stats.map((stat, idx) => (
                 <div 
@@ -82,7 +76,7 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Right Column: Detailed Text Narrative */}
+          {/* Right Column */}
           <motion.div 
             variants={rightColumnVariants}
             initial="hidden"
@@ -108,7 +102,6 @@ export default function About() {
               </p>
             </div>
 
-            {/* Quick Education / Focus Cards */}
             <div className="pt-4 border-t border-slate-900 grid gap-4 sm:grid-cols-2">
               <div className="flex items-start space-x-3">
                 <GraduationCap className="h-5 w-5 text-indigo-400 mt-1 shrink-0" />
