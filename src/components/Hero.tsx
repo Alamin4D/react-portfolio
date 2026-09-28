@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { motion } from "framer-motion";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
@@ -7,14 +5,20 @@ import { ArrowUpRight, Mail } from "lucide-react";
 
 export default function Hero() {
   const [text] = useTypewriter({
-    words: ["Full-Stack Developer", "Software Engineer", "Backend Developer", "MERN Stack Developer", "UI/UX Designer", "Problem Solver"],
+    words: [
+      "Full-Stack Developer", 
+      "Software Engineer", 
+      "Backend Developer", 
+      "MERN Stack Developer", 
+      "UI/UX Designer", 
+      "Problem Solver"
+    ],
     loop: true,
     delaySpeed: 2000,
     typeSpeed: 100,
     deleteSpeed: 50,
   });
 
-  
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-slate-950 px-6 py-24 text-slate-50 md:px-12">
       {/* Background Radial Glow */}

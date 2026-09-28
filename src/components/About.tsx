@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { motion } from "framer-motion";
 import { User, Briefcase, GraduationCap, Award } from "lucide-react";
@@ -76,7 +74,7 @@ export default function About() {
 
             <div className="space-y-4 text-base leading-relaxed text-slate-400 sm:text-lg">
               <p>
-                Hello! I&apos;m <span className="text-slate-200 font-medium">Alamin</span>, a software engineer with a deep passion for digital craftsmanship. My journey in tech started with a curiosity about how things work on the internet, which quickly evolved into building dynamic, highly-optimized web applications.
+                Hello! I'm <span className="text-slate-200 font-medium">Alamin</span>, a software engineer with a deep passion for digital craftsmanship. My journey in tech started with a curiosity about how things work on the internet, which quickly evolved into building dynamic, highly-optimized web applications.
               </p>
               <p>
                 I thrive on turning complex problems into elegant, human-readable code. Whether I am tuning client-side performance, structuring robust APIs, or working on flexible UI components, I keep scale, security, and responsive systems front and center.
@@ -96,7 +94,7 @@ export default function About() {
                 <Briefcase className="h-5 w-5 text-sky-400 mt-1 shrink-0" />
                 <div>
                   <h4 className="text-sm font-semibold text-slate-200">Current Focus</h4>
-                  <p className="text-xs text-slate-500 mt-0.5">Serverless Architecture & Next.js Performance</p>
+                  <p className="text-xs text-slate-500 mt-0.5">MERN Stack & React Frontend Optimization</p>
                 </div>
               </div>
             </div>
