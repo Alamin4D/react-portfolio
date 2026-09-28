@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion"; // Pure type-only import for verbatimModuleSyntax configuration
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { ArrowUpRight, Mail } from "lucide-react";
 
@@ -19,6 +20,25 @@ export default function Hero() {
     deleteSpeed: 50,
   });
 
+  // Explicit type matching for animations parameters configuration override
+  const leftSideVariants: Variants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1.0] } // cubic-bezier solves transition ease type warning
+    }
+  };
+
+  const rightSideVariants: Variants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 1, ease: [0.25, 0.1, 0.25, 1.0], delay: 0.2 }
+    }
+  };
+
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-slate-950 px-6 py-24 text-slate-50 md:px-12">
       {/* Background Radial Glow */}
@@ -28,9 +48,9 @@ export default function Hero() {
         
         {/* Left Side: Content */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          variants={leftSideVariants}
+          initial="hidden"
+          animate="visible"
           className="flex flex-col space-y-6 text-center md:max-w-2xl md:text-left"
         >
           <span className="text-sm font-semibold tracking-widest text-sky-400 uppercase">
@@ -72,9 +92,9 @@ export default function Hero() {
 
         {/* Right Side: Animated Image Section */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+          variants={rightSideVariants}
+          initial="hidden"
+          animate="visible"
           className="relative flex items-center justify-center"
         >
           {/* Animated Glow Background */}

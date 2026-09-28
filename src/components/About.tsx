@@ -1,14 +1,41 @@
 import React from "react";
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion"; // Pure type-only import for verbatimModuleSyntax compatibility
 import { User, Briefcase, GraduationCap, Award } from "lucide-react";
 
+// interface for Stat Structure definition
+interface StatItem {
+  label: string;
+  value: string;
+  icon: React.ReactNode;
+}
+
 export default function About() {
-  // Statistical Cards Data
-  const stats = [
+  // Statistical Cards Typed Data
+  const stats: StatItem[] = [
     { label: "Years Experience", value: "3+", icon: <Briefcase className="h-5 w-5 text-sky-400" /> },
     { label: "Projects Completed", value: "40+", icon: <Award className="h-5 w-5 text-indigo-400" /> },
     { label: "Happy Clients", value: "15+", icon: <User className="h-5 w-5 text-emerald-400" /> },
   ];
+
+  // Framer Motion Animation Variants with explicit Types to resolve compilation error
+  const leftColumnVariants: Variants = {
+    hidden: { opacity: 0, x: -40 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1.0] }, // Cubic-bezier avoids string errors
+    },
+  };
+
+  const rightColumnVariants: Variants = {
+    hidden: { opacity: 0, x: 40 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1.0], delay: 0.1 },
+    },
+  };
 
   return (
     <section id="about" className="relative bg-slate-950 px-6 py-24 text-slate-50 md:px-12">
@@ -20,10 +47,10 @@ export default function About() {
           
           {/* Left Column: Visual Box & Stats Card Grid */}
           <motion.div 
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            variants={leftColumnVariants}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
             className="md:col-span-5 flex flex-col gap-6"
           >
             {/* Visual Decorative Box */}
@@ -57,10 +84,10 @@ export default function About() {
 
           {/* Right Column: Detailed Text Narrative */}
           <motion.div 
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            variants={rightColumnVariants}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
             className="md:col-span-7 flex flex-col space-y-6"
           >
             <div>

@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion"; // Fixed for verbatimModuleSyntax
 
-// Icons from lucide-react (Built-in standard library setup)
+// Icons from lucide-react (Clean standard list structure)
 import { 
   Code2, 
   Layers, 
@@ -9,8 +10,15 @@ import {
   Terminal 
 } from "lucide-react";
 
+// Skill Data Type Structure Interface Definition
+interface SkillCategory {
+  title: string;
+  icon: React.ReactNode;
+  skills: string[];
+}
+
 // Skill Data Structure
-const skillCategories = [
+const skillCategories: SkillCategory[] = [
   {
     title: "Frontend Development",
     icon: <Code2 className="h-6 w-6 text-sky-400" />,
@@ -33,8 +41,8 @@ const skillCategories = [
   },
 ];
 
-// Framer Motion Animation Variants
-const containerVariants = {
+// Framer Motion Animation Variants with Explicit Type Assertions to fix Easing Type Issue
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -42,12 +50,15 @@ const containerVariants = {
   },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { 
+      duration: 0.5, 
+      ease: [0.25, 0.1, 0.25, 1.0] // Cubic-bezier array notation resolves string ease strict typing error
+    },
   },
 };
 
@@ -83,7 +94,7 @@ export default function Skills() {
           {skillCategories.map((category, idx) => (
             <motion.div
               key={idx}
-              // variants={cardVariants} // React e runtime stagger card movement clean trigger hobar jonno variant active kora holo
+              variants={cardVariants} // Restored variants tracking link system smoothly
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
               className="group relative rounded-2xl border border-slate-900 bg-slate-900/40 p-6 backdrop-blur-sm transition-all duration-300 hover:border-slate-800 hover:bg-slate-900/70 shadow-lg"
             >
