@@ -14,6 +14,7 @@ export default function Hero() {
     deleteSpeed: 50,
   });
 
+  
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-slate-950 px-6 py-24 text-slate-50 md:px-12">
       {/* Background Radial Glow */}
