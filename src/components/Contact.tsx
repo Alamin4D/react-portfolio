@@ -194,7 +194,7 @@ export function Contact() {
     <section
       id="contact"
       ref={ref}
-      className="relative overflow-hidden bg-[#050509] py-28 sm:py-32"
+      className="relative overflow-hidden bg-slate-950 py-28 sm:py-32"
     >
       {/* ========================================================
           BACKGROUND
@@ -275,7 +275,7 @@ export function Contact() {
           {/* Heading */}
           <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
             Let&apos;s Build Something{" "}
-            <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent">
               Great
             </span>
           </h2>

@@ -31,7 +31,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-[#06060a] border-t border-gray-800/50 relative">
+    <footer className="bg-slate-950 border-t border-gray-800/50 relative">
       {/* Top Gradient Line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500 to-transparent"></div>
 
