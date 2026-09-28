@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import type { Variants } from "framer-motion"; 
 import { User, Briefcase, GraduationCap, Award } from "lucide-react";
 
+
 interface StatItem {
   label: string;
   value: string;
