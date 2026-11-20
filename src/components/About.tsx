@@ -100,6 +100,7 @@ export default function About() {
               </p>
             </div>
 
+
             <div className="pt-4 border-t border-slate-900 grid gap-4 sm:grid-cols-2">
               <div className="flex items-start space-x-3">
                 <GraduationCap className="h-5 w-5 text-indigo-400 mt-1 shrink-0" />
