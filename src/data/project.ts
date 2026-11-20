@@ -14,6 +14,53 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "GrabGear",
+    name: "GrabGear — Peer-to-Peer Equipment Rental Platform",
+
+    tagline:
+      "A peer-to-peer equipment rental marketplace bridging outdoor enthusiasts with gear providers across Bangladesh.",
+
+    image: "/images/grabgear.png",
+
+    description:
+      "GrabGear is a full-stack peer-to-peer equipment rental platform designed to connect outdoor enthusiasts with local gear providers across Bangladesh. Users can browse available inventory with fast server-side rendered filtering, calculate multi-day rental pricing in BDT in real time, and complete instant, secure payments via Stripe. The platform also includes role-based dashboards allowing gear providers to manage inventory and orders independently while admins oversee platform revenue trends.",
+
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "Prisma ORM",
+      "JWT",
+      "Stripe API",
+      "React Query",
+      "Zod",
+      "React Hook Form",
+      "Tailwind CSS",
+    ],
+
+    liveLink: "https://frontend-gear-up-prisma-stripe.vercel.app/",
+    githubLink: "https://github.com/Alamin4D/Frontend_Gear_up_prisma_Stripe",
+
+    keyFeatures: [
+      "Transparent, real-time rental pricing in BDT powered by a custom multi-day rental calculator.",
+      "Instant and secure online checkout workflow with Stripe payment integration.",
+      "Hybridized server-side rendered (SSR) catalog with live URL query synchronization for fast discovery and shareable search filters.",
+      "Role-based access control (RBAC) isolating capabilities for Customers, Gear Providers, and Admins.",
+      "Dedicated provider dashboard to independently list equipment, manage inventory, and fulfill rental orders.",
+      "Admin oversight dashboard for monitoring platform activity, user roles, and revenue trends.",
+      "End-to-end type-safe form handling and schema validation using React Hook Form and Zod."
+    ],
+
+    challenges:
+      "One of the key challenges was keeping search filters fast and shareable without sacrificing SEO, which was solved using hybridized server-side rendering with live URL query synchronization. Another challenge was designing a secure role-based architecture with PostgreSQL and Prisma to isolate provider inventory management from admin revenue analytics while preventing double bookings.",
+
+    improvements:
+      "Future enhancements include real-time availability calendars with automated conflict detection, in-app messaging between renters and providers, automated security deposit holds, and location-based gear discovery."
+  },
+
+  {
     id: "Delish (Team Project)",
     name: "Delish — Food Delivery App",
 

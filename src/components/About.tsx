@@ -12,9 +12,6 @@ interface StatItem {
 
 export default function About() {
   const stats: StatItem[] = [
-    { label: "Years Experience", value: "3+", icon: <Briefcase className="h-5 w-5 text-sky-400" /> },
-    { label: "Projects Completed", value: "40+", icon: <Award className="h-5 w-5 text-indigo-400" /> },
-    { label: "Happy Clients", value: "15+", icon: <User className="h-5 w-5 text-emerald-400" /> },
   ];
 
   const leftColumnVariants: Variants = {
@@ -108,7 +105,7 @@ export default function About() {
                 <GraduationCap className="h-5 w-5 text-indigo-400 mt-1 shrink-0" />
                 <div>
                   <h4 className="text-sm font-semibold text-slate-200">Education</h4>
-                  <p className="text-xs text-slate-500 mt-0.5">B.Sc. in Computer Science & Engineering</p>
+                  <p className="text-xs text-slate-500 mt-0.5">Diploma in Computer Science & Technology</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
